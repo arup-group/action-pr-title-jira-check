@@ -1,0 +1,19 @@
+name: 'PR Title Jira Check'
+description: 'PR Title Jira Check'
+author: 'Peter Grainger (peter.grainger@arup.com)'
+branding:
+  icon: 'git-branch' 
+  color: 'green'
+inputs:
+  prTitle:
+    description: 'The PR title to check'
+  jiraSecret:
+    description: 'The secret to contact the Jira API'
+  statusCategory:
+    description: 'The required status category'
+    default: 'In Progress'
+  jiraUsername:
+    description: 'Username of the Jira account'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

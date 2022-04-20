@@ -1,0 +1,28 @@
+{
+  "name": "action-pr-title-check",
+  "version": "1.0.0",
+  "description": "Title check against PR title",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "build": "ncc build index.js -o dist",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "github",
+    "actions"
+  ],
+  "author": "peterjgrainger",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^1.1.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.33.4",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1"
+  }
+}
