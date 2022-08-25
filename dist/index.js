@@ -5454,10 +5454,24 @@ const isValidJiraState = async (pr, statusCategory, jiraUsername, jiraSecret, lo
   if(status === 200) {
     const jiraStatusCategory = json.fields.status.statusCategory.name;
     log(`${pr} has status category: ${jiraStatusCategory}`);
-    return jiraStatusCategory === statusCategory;
+
+    if(jiraStatusCategory === statusCategory) {
+      return {
+        result: true,
+        message: `${pr} has status category: ${jiraStatusCategory}`
+      }
+    } else {
+      return {
+        result: false,
+        message: `${pr} has status category ${jiraStatusCategory}, expected ${statusCategory}`
+      }
+    }
   } else {
     log(`Couldn't find Jira ticket: ${pr}`);
-    return false
+    return {
+      result: false,
+      message: `Could not find Jira ticket ${pr}`
+    }
   }
 }
 
@@ -5661,7 +5675,7 @@ async function run() {
 
     // Check the Jira ticket status category
     const jiraStateValid = await isValidJiraState(jiraKey, statusCategory, jiraUsername, jiraSecret, debug);
-    if(!jiraStateValid) throw Error(`Jira ticket ${jiraKey} is not in the ${statusCategory} state`);
+    if(!jiraStateValid.result) throw Error(jiraStateValid.message);
 
   } catch (error) {
     setFailed(error);
