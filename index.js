@@ -18,7 +18,7 @@ async function run() {
 
     // Check the Jira ticket status category
     const jiraStateValid = await isValidJiraState(jiraKey, statusCategory, jiraUsername, jiraSecret, debug);
-    if(!jiraStateValid) throw Error(`Jira ticket ${jiraKey} is not in the ${statusCategory} state`);
+    if(!jiraStateValid.result) throw Error(jiraStateValid.message);
 
   } catch (error) {
     setFailed(error);

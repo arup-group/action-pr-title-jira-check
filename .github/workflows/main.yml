@@ -21,7 +21,7 @@ jobs:
       - name: Test Workflow
         uses: ./
         with:
-          prTitle: 'D3-331'
+          prTitle: 'D3-367'
           jiraSecret: '${{ secrets.JIRASECRET }}'
           statusCategory: 'In Progress'
           jiraUsername: '${{ secrets.JIRAUSERNAME }}'
