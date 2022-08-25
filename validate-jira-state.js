@@ -8,8 +8,6 @@ const isValidJiraState = async (pr, statusCategory, jiraUsername, jiraSecret, lo
   const status = await response.status;
   const json = await response.json();
 
-  console.log(status)
-
   if(status === 200) {
     const jiraStatusCategory = json.fields.status.statusCategory.name;
     log(`${pr} has status category: ${jiraStatusCategory}`);
