@@ -26,6 +26,6 @@ jobs:
         uses: ./
         with:
           prTitle: 'D3-367'
-          jiraSecret: '${{ secrets.JIRASECRET }}'
+          jiraSecret: '${{ secrets.JIRASECRETTEST }}'
           statusCategory: 'Done'
           jiraUsername: '${{ secrets.JIRAUSERNAME }}'
