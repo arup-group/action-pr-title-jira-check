@@ -30595,7 +30595,11 @@ module.exports = {
 /***/ 1781:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const fetch = __nccwpck_require__(4034);
+let fetch = globalThis.fetch;
+if (!fetch) {
+  const nodeFetch = __nccwpck_require__(4034);
+  fetch = nodeFetch.default || nodeFetch;
+}
 
 const isValidJiraState = async (pr, statusCategory, jiraUsername, jiraSecret, log) => {
   const response = await fetch(`https://ovearup.atlassian.net/rest/api/3/issue/${pr}?fields=status`, {

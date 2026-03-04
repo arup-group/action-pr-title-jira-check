@@ -1,4 +1,8 @@
-const fetch = require('node-fetch');
+let fetch = globalThis.fetch;
+if (!fetch) {
+  const nodeFetch = require('node-fetch');
+  fetch = nodeFetch.default || nodeFetch;
+}
 
 const isValidJiraState = async (pr, statusCategory, jiraUsername, jiraSecret, log) => {
   const response = await fetch(`https://ovearup.atlassian.net/rest/api/3/issue/${pr}?fields=status`, {
