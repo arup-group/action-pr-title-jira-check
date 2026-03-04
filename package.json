@@ -16,8 +16,8 @@
   "author": "peterjgrainger",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^3.0.0",
-    "@actions/github": "^9.0.0",
+    "@actions/core": "^2.0.0",
+    "@actions/github": "^8.0.0",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
