@@ -27,5 +27,5 @@ jobs:
         with:
           prTitle: 'D3-367'
           jiraSecret: '${{ secrets.JIRASECRET }}'
-          statusCategory: 'In Progress'
+          statusCategory: 'Done'
           jiraUsername: '${{ secrets.JIRAUSERNAME }}'
