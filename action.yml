@@ -2,7 +2,7 @@ name: 'PR Title Jira Check'
 description: 'PR Title Jira Check'
 author: 'Peter Grainger (peter.grainger@arup.com)'
 branding:
-  icon: 'git-branch' 
+  icon: 'git-branch'
   color: 'green'
 inputs:
   prTitle:
@@ -15,5 +15,5 @@ inputs:
   jiraUsername:
     description: 'Username of the Jira account'
 runs:
-  using: 'node12'
+  using: 'node24'
   main: 'dist/index.js'
