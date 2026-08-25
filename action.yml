@@ -2,7 +2,7 @@ name: 'PR Title Jira Check'
 description: 'PR Title Jira Check'
 author: 'Peter Grainger (peter.grainger@arup.com)'
 branding:
-  icon: 'git-branch' 
+  icon: 'git-branch'
   color: 'green'
 inputs:
   prTitle:
