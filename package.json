@@ -15,6 +15,9 @@
   ],
   "author": "peterjgrainger",
   "license": "MIT",
+  "overrides": {
+    "js-yaml": "3.15.1"
+  },
   "dependencies": {
     "node-fetch": "^3.3.2"
   },
