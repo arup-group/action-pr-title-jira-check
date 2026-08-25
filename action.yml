@@ -15,5 +15,5 @@ inputs:
   jiraUsername:
     description: 'Username of the Jira account'
 runs:
-  using: 'node12'
+  using: 'node24'
   main: 'dist/index.js'
