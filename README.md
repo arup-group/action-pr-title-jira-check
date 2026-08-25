@@ -4,11 +4,11 @@ This action extracts a Jira key from `prTitle` and checks in [Arup's Jira](ttps:
 
 The `prTitle` must have the Jira key at the start of the text followed by a space e.g. `D3-331 Some great change`. This will use the jira key `D3-331` and call the Jira API. If the status of the Jira ticket is the same as `statusCategory` the action will complete sucessfully, otherwise the step will fail with an error.
 
-# Usage
+## Usage
 
 <!-- start usage -->
 ```yaml
-- uses: arup-group/action-pr-title-jira-check@main
+- uses: arup-group/action-pr-title-jira-check@bdf86170a4659a0808dcd41f722ee1eeb7ed9df1 #v2026.1.2
   with:
     # Pull request title. If this action is triggered by a PR update use ${{ github.event.pull_request.title }}
     # No Default
@@ -18,7 +18,7 @@ The `prTitle` must have the Jira key at the start of the text followed by a spac
     # No Default
     jiraSecret: ''
 
-    # One of Complete, In Progress, To do 
+    # One of Complete, In Progress, To do
     # No Default
     statusCategory: ''
 
@@ -28,11 +28,11 @@ The `prTitle` must have the Jira key at the start of the text followed by a spac
 ```
 <!-- end usage -->
 
-# Example
+## Example
 
 ```yaml
 - name: Valid PR title
-  uses: arup-group/action-pr-title-jira-check@main
+  uses: arup-group/action-pr-title-jira-check@bdf86170a4659a0808dcd41f722ee1eeb7ed9df1 #v2026.1.2
   with:
     prTitle: '${{ github.event.pull_request.title }}'
     jiraSecret: '${{ secrets.JIRA_PASSWORD }}'
