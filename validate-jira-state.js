@@ -1,13 +1,10 @@
-let fetchFn = globalThis.fetch;
-
 const getFetch = async () => {
-  if (fetchFn) {
-    return fetchFn;
+  if (globalThis.fetch) {
+    return globalThis.fetch;
   }
 
   const nodeFetch = await import('node-fetch');
-  fetchFn = nodeFetch.default || nodeFetch;
-  return fetchFn;
+  return nodeFetch.default || nodeFetch;
 }
 
 const isValidJiraState = async (pr, statusCategory, jiraUsername, jiraSecret, log) => {
